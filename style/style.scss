@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:500,600,800&display=swap');
 
 $color-primary: linear-gradient(90deg, hsl(236, 72%, 79%) 0%, hsl(237, 63%, 64%) 100%);
 $color-text-lite: hsl(233, 13%, 49%);
@@ -7,14 +7,63 @@ $color-text-dark: hsl(232, 13%, 33%);
 
 body {
   color: $color-text-dark;
+
   font-family: 'Montserrat', sans-serif;
   font-size: 15px;
+  font-weight: 700;
 }
 
-.packages {
+.pricing-component {
+  align-items: center;
   display: flex;
+  flex-direction: column;
+  width: 100%;
 
-  .pkg-card {
+  h1 {
+    font-size: 2em;
+    margin: 24px 0;
+  }
+
+  &--selector {
+    margin: 24px 0;
+
+    color: $color-text-lite;
+    font-size: 1em;
+  }
+
+  &--table {
+    display: flex;
+    margin: 24px 0;
+  }
+
+  &--card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 0 16px $color-text-lite;
+    padding: 24px;
+
     text-align: center;
+
+    h2 {
+      font-size: 0.8em;
+    }
+
+    &_price {
+      display: none;
+
+      font-size: 3.5em;
+      font-weight: 600;
+
+      &.show {
+        display: block;
+      }
+    }
+
+    &_feature {
+      border-bottom: 1px solid $color-text-lite;
+      padding: 16px;
+
+      font-size: 0.8em;
+    }
   }
 }
