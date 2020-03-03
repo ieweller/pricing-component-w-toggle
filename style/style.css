@@ -1,0 +1,6 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+body { color: #494c5f; font-family: 'Montserrat', sans-serif; font-size: 15px; }
+
+.packages { display: -webkit-box; display: flex; }
+
+.packages .pkg-card { text-align: center; }
