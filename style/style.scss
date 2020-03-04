@@ -3,9 +3,12 @@ $color-primary: linear-gradient(90deg, hsl(236, 72%, 79%) 0%, hsl(237, 63%, 64%)
 $color-text-lite: hsl(233, 13%, 49%);
 $color-text-dark: hsl(232, 13%, 33%);
 
+* {
+  box-sizing: border-box;
+}
+
 body {
-  width: 100vw;
-  height: 100vh;
+  margin: 0;
 
   background-image: url(../img/bg-top.svg), url(../img/bg-bottom.svg);
   background-position: top right, bottom left;
@@ -16,6 +19,12 @@ body {
   font-family: 'Montserrat', sans-serif;
   font-size: 15px;
   font-weight: 700;
+
+  @media (max-width: 768px) {
+    background-attachment: fixed;
+    background-image: url(../img/bg-top.svg);
+    background-position: top right;
+  }
 }
 
 button { // Resets default button appearance
@@ -33,6 +42,8 @@ button { // Resets default button appearance
 .pricing-component {
   align-items: center;
   flex-direction: column;
+  left: 0;
+  top: 0;
 
   display: flex;
   padding-top: 12px;
@@ -72,13 +83,13 @@ button { // Resets default button appearance
         i {
           border-radius: 99px;
           display: inline-block;
-          left: 8%;
+          left: 4px;
           position: absolute;
-          top: 14%;
+          top: 4px;
           transition: all 200ms ease;
 
-          height: 72%;
-          width: 42%;
+          height: 22px;
+          width: 22px;
 
           background: #fff;
         }
@@ -118,6 +129,7 @@ button { // Resets default button appearance
 
     @media (max-width: 768px) {
       flex-direction: column;
+      width: 100%;
     }
   }
 
@@ -131,13 +143,20 @@ button { // Resets default button appearance
 
     text-align: center;
 
+    @media (max-width: 768px) {
+      max-width: 512px;
+      width: 100%;
+    }
+
     h2 {
       font-size: 0.8em;
       font-weight: 500;
     }
 
     button {
+      border: 1px solid rgba(0,0,0,0);
       border-radius: 6px;
+      box-sizing: border-box;
       display: block;
       margin: 16px 0;
       padding: 10px;
@@ -153,7 +172,9 @@ button { // Resets default button appearance
       transition: all 200ms ease;
 
       &:hover {
-        transform: scale(1.1);
+        background: rgba(0,0,0,0);
+        border: 1px solid #6b67c7;
+        color: #6b67c7;
       }
     }
 
@@ -188,7 +209,14 @@ button { // Resets default button appearance
 
       button {
         background: #fff;
+        border: 1px solid #fff;
         color: #6b67c7;
+
+        &:hover {
+          background: rgba(0,0,0,0);
+          border: 1px solid #fff;
+          color: #fff;
+        }
       }
     }
   }
