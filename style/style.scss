@@ -1,11 +1,16 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:500,600,800&display=swap');
-
 $color-primary: linear-gradient(90deg, hsl(236, 72%, 79%) 0%, hsl(237, 63%, 64%) 100%);
 $color-text-lite: hsl(233, 13%, 49%);
 $color-text-dark: hsl(232, 13%, 33%);
 
-
 body {
+  width: 100vw;
+  height: 100vh;
+
+  background-image: url(../img/bg-top.svg), url(../img/bg-bottom.svg);
+  background-position: top right, bottom left;
+  background-repeat: no-repeat;
+  background-size: auto 75vh, auto 38vh;
   color: $color-text-dark;
 
   font-family: 'Montserrat', sans-serif;
@@ -13,43 +18,149 @@ body {
   font-weight: 700;
 }
 
+button { // Resets default button appearance
+  border: none;
+  padding: 0;
+
+  background: none;
+  color: inherit;
+
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
 .pricing-component {
   align-items: center;
-  display: flex;
   flex-direction: column;
+
+  display: flex;
+  padding-top: 12px;
   width: 100%;
 
   h1 {
-    font-size: 2em;
     margin: 24px 0;
+
+    font-size: 1.5em;
+    font-weight: 600;
   }
 
   &--selector {
+    align-items: center;
+    display: flex;
     margin: 24px 0;
 
     color: $color-text-lite;
-    font-size: 1em;
+
+    font-size: 0.8em;
+    font-weight: 400;
+
+    input[type="checkbox"] {
+      display: none;
+
+      & + label {
+        position: relative;
+
+        border-radius: 99px;
+        display: inline-block;
+        height: 30px;
+        margin: 0 12px;
+        width: 52px;
+
+        background: $color-primary;
+
+        i {
+          border-radius: 99px;
+          display: inline-block;
+          left: 8%;
+          position: absolute;
+          top: 14%;
+          transition: all 200ms ease;
+
+          height: 72%;
+          width: 42%;
+
+          background: #fff;
+        }
+
+        &:before {
+          display: inline-block;
+          height: 100%;
+          width: 50%;
+        }
+
+        &:after {
+          display: inline-block;
+          height: 100%;
+          width: 50%;
+        }
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
+      &:checked + label {
+
+        i {
+          left: 50%;
+        }
+      }
+    }
   }
 
   &--table {
+    align-items: center;
+
     display: flex;
     margin: 24px 0;
+    padding: 0 24px;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
   }
 
   &--card {
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 0 16px $color-text-lite;
+    border-radius: 6px;
+    box-shadow: 0 0 16px #eeecf8;
+    margin-bottom: 24px;
     padding: 24px;
+
+    background: #fff;
 
     text-align: center;
 
     h2 {
       font-size: 0.8em;
+      font-weight: 500;
+    }
+
+    button {
+      border-radius: 6px;
+      display: block;
+      margin: 16px 0;
+      padding: 10px;
+      width: 100%;
+
+      background: $color-primary;
+      color: #fff;
+
+      font-weight: 400;
+      font-size: 0.7em;
+      text-transform: uppercase;
+
+      transition: all 200ms ease;
+
+      &:hover {
+        transform: scale(1.1);
+      }
     }
 
     &_price {
+      border-bottom: 1px solid #ccc;
       display: none;
+      padding: 12px 0;
 
       font-size: 3.5em;
       font-weight: 600;
@@ -60,10 +171,25 @@ body {
     }
 
     &_feature {
-      border-bottom: 1px solid $color-text-lite;
-      padding: 16px;
+      border-bottom: 1px solid #ccc;
+      padding: 12px;
 
       font-size: 0.8em;
+      font-weight: 400;
+    }
+
+    &:nth-child(2) {
+      z-index: 2;
+
+      padding: 32px 24px;
+
+      background: $color-primary;
+      color: #fff;
+
+      button {
+        background: #fff;
+        color: #6b67c7;
+      }
     }
   }
 }

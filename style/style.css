@@ -1,20 +1,46 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:500,600,800&display=swap");
-body { color: #494c5f; font-family: 'Montserrat', sans-serif; font-size: 15px; font-weight: 700; }
+body { width: 100vw; height: 100vh; background-image: url(../img/bg-top.svg), url(../img/bg-bottom.svg); background-position: top right, bottom left; background-repeat: no-repeat; background-size: auto 75vh, auto 38vh; color: #494c5f; font-family: 'Montserrat', sans-serif; font-size: 15px; font-weight: 700; }
 
-.pricing-component { -webkit-box-align: center; align-items: center; display: -webkit-box; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; flex-direction: column; width: 100%; }
+button { border: none; padding: 0; background: none; color: inherit; font: inherit; cursor: pointer; outline: inherit; }
 
-.pricing-component h1 { font-size: 2em; margin: 24px 0; }
+.pricing-component { -webkit-box-align: center; align-items: center; -webkit-box-orient: vertical; -webkit-box-direction: normal; flex-direction: column; display: -webkit-box; display: flex; padding-top: 12px; width: 100%; }
 
-.pricing-component--selector { margin: 24px 0; color: #6d708d; font-size: 1em; }
+.pricing-component h1 { margin: 24px 0; font-size: 1.5em; font-weight: 600; }
 
-.pricing-component--table { display: -webkit-box; display: flex; margin: 24px 0; }
+.pricing-component--selector { -webkit-box-align: center; align-items: center; display: -webkit-box; display: flex; margin: 24px 0; color: #6d708d; font-size: 0.8em; font-weight: 400; }
 
-.pricing-component--card { background: #fff; border-radius: 12px; box-shadow: 0 0 16px #6d708d; padding: 24px; text-align: center; }
+.pricing-component--selector input[type="checkbox"] { display: none; }
 
-.pricing-component--card h2 { font-size: 0.8em; }
+.pricing-component--selector input[type="checkbox"] + label { position: relative; border-radius: 99px; display: inline-block; height: 30px; margin: 0 12px; width: 52px; background: -webkit-gradient(linear, left top, right top, from(#a3a8f0), to(#696fdd)); background: linear-gradient(90deg, #a3a8f0 0%, #696fdd 100%); }
 
-.pricing-component--card_price { display: none; font-size: 3.5em; font-weight: 600; }
+.pricing-component--selector input[type="checkbox"] + label i { border-radius: 99px; display: inline-block; left: 8%; position: absolute; top: 14%; -webkit-transition: all 200ms ease; transition: all 200ms ease; height: 72%; width: 42%; background: #fff; }
+
+.pricing-component--selector input[type="checkbox"] + label:before { display: inline-block; height: 100%; width: 50%; }
+
+.pricing-component--selector input[type="checkbox"] + label:after { display: inline-block; height: 100%; width: 50%; }
+
+.pricing-component--selector input[type="checkbox"] + label:hover { cursor: pointer; }
+
+.pricing-component--selector input[type="checkbox"]:checked + label i { left: 50%; }
+
+.pricing-component--table { -webkit-box-align: center; align-items: center; display: -webkit-box; display: flex; margin: 24px 0; padding: 0 24px; }
+
+@media (max-width: 768px) { .pricing-component--table { -webkit-box-orient: vertical; -webkit-box-direction: normal; flex-direction: column; } }
+
+.pricing-component--card { border-radius: 6px; box-shadow: 0 0 16px #eeecf8; margin-bottom: 24px; padding: 24px; background: #fff; text-align: center; }
+
+.pricing-component--card h2 { font-size: 0.8em; font-weight: 500; }
+
+.pricing-component--card button { border-radius: 6px; display: block; margin: 16px 0; padding: 10px; width: 100%; background: -webkit-gradient(linear, left top, right top, from(#a3a8f0), to(#696fdd)); background: linear-gradient(90deg, #a3a8f0 0%, #696fdd 100%); color: #fff; font-weight: 400; font-size: 0.7em; text-transform: uppercase; -webkit-transition: all 200ms ease; transition: all 200ms ease; }
+
+.pricing-component--card button:hover { -webkit-transform: scale(1.1); transform: scale(1.1); }
+
+.pricing-component--card_price { border-bottom: 1px solid #ccc; display: none; padding: 12px 0; font-size: 3.5em; font-weight: 600; }
 
 .pricing-component--card_price.show { display: block; }
 
-.pricing-component--card_feature { border-bottom: 1px solid #6d708d; padding: 16px; font-size: 0.8em; }
+.pricing-component--card_feature { border-bottom: 1px solid #ccc; padding: 12px; font-size: 0.8em; font-weight: 400; }
+
+.pricing-component--card:nth-child(2) { z-index: 2; padding: 32px 24px; background: -webkit-gradient(linear, left top, right top, from(#a3a8f0), to(#696fdd)); background: linear-gradient(90deg, #a3a8f0 0%, #696fdd 100%); color: #fff; }
+
+.pricing-component--card:nth-child(2) button { background: #fff; color: #6b67c7; }
