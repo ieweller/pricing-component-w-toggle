@@ -33,7 +33,7 @@ button { border: none; padding: 0; background: none; color: inherit; font: inher
 
 @media (max-width: 768px) { .pricing-component--table { -webkit-box-orient: vertical; -webkit-box-direction: normal; flex-direction: column; width: 100%; } }
 
-.pricing-component--card { border-radius: 6px; box-shadow: 0 0 16px #eeecf8; margin-bottom: 24px; padding: 24px; background: #fff; text-align: center; }
+.pricing-component--card { border-radius: 6px; box-shadow: 0 0 16px #eeecf8; margin-bottom: 24px; padding: 24px; background: rgba(255, 255, 255, 0.9); text-align: center; }
 
 @media (max-width: 768px) { .pricing-component--card { max-width: 512px; width: 100%; } }
 
