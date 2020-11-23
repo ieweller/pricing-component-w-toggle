@@ -3,7 +3,7 @@
 
 html, body { height: 100%; font-size: 16px; }
 
-body { margin: 0; background-image: url(../img/bg-top.svg), url(../img/bg-bottom.svg); background-position: top right, bottom left; background-repeat: no-repeat; background-size: auto 75vh, auto 38vh; color: #737891; font-family: 'Montserrat', sans-serif; font-weight: 700; }
+body { margin: 0; background-color: #f5f6ff; background-image: url(../img/bg-top.svg), url(../img/bg-bottom.svg); background-position: top right, bottom left; background-repeat: no-repeat; background-size: auto 75vh, auto 38vh; color: #737891; font-family: 'Montserrat', sans-serif; font-weight: 700; }
 
 @media (max-width: 768px) { body { background-attachment: fixed; background-image: url(../img/bg-top.svg); background-position: top right; } }
 
@@ -33,7 +33,7 @@ button { border: none; padding: 0; background: none; color: inherit; font: inher
 
 @media (max-width: 768px) { .pricing-component--table { -webkit-box-orient: vertical; -webkit-box-direction: normal; flex-direction: column; width: 100%; } }
 
-.pricing-component--card { border-radius: 6px; box-shadow: 0 0 16px #eeecf8; margin-bottom: 24px; padding: 1.5rem 2rem; background: rgba(255, 255, 255, 0.9); text-align: center; }
+.pricing-component--card { border-radius: 6px; box-shadow: 0 0 16px #eeecf8; margin-bottom: 24px; padding: 1.5rem 2rem; background: #fff; text-align: center; }
 
 @media (max-width: 768px) { .pricing-component--card { max-width: 512px; width: 100%; } }
 

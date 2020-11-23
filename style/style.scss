@@ -17,6 +17,7 @@ body {
 body {
   margin: 0;
 
+  background-color: hsla(233, 100%, 98%, 1.00);
   background-image: url(../img/bg-top.svg), url(../img/bg-bottom.svg);
   background-position: top right, bottom left;
   background-repeat: no-repeat;
@@ -148,7 +149,7 @@ button { // Resets default button appearance
     margin-bottom: 24px;
     padding: 1.5rem 2rem;
 
-    background: rgba(255,255,255,0.9);
+    background: #fff;
 
     text-align: center;
 
